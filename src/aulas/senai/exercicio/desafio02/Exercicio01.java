@@ -2,6 +2,7 @@ package aulas.senai.exercicio.desafio02;
 
 import java.util.Scanner;
 
+//18.10.22
 //Faça um algoritmo que receba um número e informe se esse número digitado é par ou ímpar
 public class Exercicio01 {
     public static void main(String[] args) {
