@@ -1,4 +1,4 @@
-package aulas.senai.exercicio.desafio01;
+package aulas.senai.exercicio.desafio01.exercicio05;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
