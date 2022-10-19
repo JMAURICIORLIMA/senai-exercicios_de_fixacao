@@ -1,4 +1,4 @@
-package aulas.senai.exercicio.desafio02;
+package aulas.senai.exercicio.desafio02.exercicio02;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;

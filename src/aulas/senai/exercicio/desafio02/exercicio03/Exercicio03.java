@@ -1,4 +1,4 @@
-package aulas.senai.exercicio.desafio02;
+package aulas.senai.exercicio.desafio02.exercicio03;
 
 import java.util.Scanner;
 
