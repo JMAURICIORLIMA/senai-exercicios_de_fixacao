@@ -13,12 +13,58 @@ public class Conta {
         this.proprietarioDaConta = proprietarioDaConta;
     }
 
-    public String getNumeroConta() {
-        return numeroConta;
+    public void depositar(double deposito) {
+        this.saldo += deposito;
+        if (deposito < 1.00 && !status) {
+            System.out.printf("Valor do depósito não permitido ou conta não inexistente.\n" +
+                    "valor abaixo de R$ 1,00 - [%.2f]", deposito);
+        } else {
+            System.out.printf("Depósito realizado com sucesso.\n" +
+                    "Valor do depósito R$ [%.2f]", deposito);
+        }
     }
 
-    public void setNumeroConta(String numeroConta) {
-        this.numeroConta = numeroConta;
+    public void sacar(double saque) {
+        this.saldo -= saque;
+        if (saque > this.saldo && !status) {
+            System.out.printf("Valor de saque maior que valor atual.\n" +
+                            "Saldo R$ %.2f\n" +
+                            "Saque R$ %.2f\n",
+                    this.saldo, saque);
+        } else {
+            System.out.printf("Saque realizado com sucesso.\n" +
+                            "Valor do saque R$ [%.2f]\n" +
+                            "Saldo atual R$ [%.2f]",
+                    saque, this.saldo);
+        }
+    }
+
+    public void saldo() {
+        if (!status) {
+            System.out.println("Conta inexistente.");
+        } else {
+            System.out.printf("Saldo R$ [%.2f]", this.saldo);
+        }
+    }
+
+    public void detalheDaConta() {
+        System.out.printf("\n**********RELATÓRIO**********\n" +
+                        "Proprietário - %s\n" +
+                        "Tipo conta - %s\n" +
+                        "Numero da conta - %s\n" +
+                        "Status - %b\n" +
+                        "Saldo - %.2f\n" +
+                        "*****************************\n",
+                this.proprietarioDaConta,
+                this.tipoConta,
+                this.numeroConta,
+                this.status,
+                this.saldo);
+    }
+
+
+    public String getNumeroConta() {
+        return numeroConta;
     }
 
     public TipoConta getTipoConta() {

@@ -6,7 +6,7 @@ public interface Controlador {
     public abstract void aumentarVolume();
     public abstract void diminuirVolume();
     public abstract void abrirMenu();
-    public abstract void ficharMenu();
+    public abstract void fecharMenu();
     public abstract void ligarMudo();
     public abstract void desligarMudo();
     public abstract void play();
