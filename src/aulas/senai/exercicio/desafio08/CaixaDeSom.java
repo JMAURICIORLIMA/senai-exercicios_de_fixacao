@@ -33,12 +33,14 @@ public class CaixaDeSom implements Controlador {
     public void aumentarVolume() {
         System.out.println("\n*PRESSIONOU AUMENTAR VOLUME*\n");
         this.volume += 5;
+        display();
     }
 
     @Override
     public void diminuirVolume() {
         System.out.println("\n*PRESSIONOU DIMINUIR VOLUME*\n");
         this.volume -= 5;
+        display();
     }
 
     @Override
@@ -47,12 +49,7 @@ public class CaixaDeSom implements Controlador {
         if (!isLigado()) {
             display();
         } else {
-            String tocar = isTocando() ? "TOCANDO" : "......";
-            System.out.printf("---------------\n" +
-                            "Volume: [ %d ]\n" +
-                            "... %S ...\n" +
-                            "---------------\n",
-                    getVolume(), tocar);
+            display();
         }
     }
 
@@ -60,6 +57,7 @@ public class CaixaDeSom implements Controlador {
     public void fecharMenu() {
         System.out.println("\n*PRESSIONOU FECHAR MENÚ*\n");
         if (!isLigado()) {
+            display();
         } else {
             System.out.println("---------------\n" +
                     "---------------");
@@ -70,8 +68,10 @@ public class CaixaDeSom implements Controlador {
     public void ligarMudo() {
         System.out.println("\n*PRESSIONOU LIGAR MUDO*\n");
         if (!isLigado()) {
+            display();
         } else {
             setVolume(0);
+            display();
         }
     }
 
@@ -79,8 +79,10 @@ public class CaixaDeSom implements Controlador {
     public void desligarMudo() {
         System.out.println("\n*PRESSIONOU DESLIGAR MUDO*\n");
         if (!isLigado()) {
+            display();
         } else {
             setVolume(30);
+            display();
         }
     }
 
@@ -88,6 +90,7 @@ public class CaixaDeSom implements Controlador {
     public void play() {
         System.out.println("\n*PRESSIONOU PLAY*\n");
         if (!isLigado()) {
+            display();
         } else {
             setTocando(true);
             display();
@@ -98,6 +101,7 @@ public class CaixaDeSom implements Controlador {
     public void pause() {
         System.out.println("\n*PRESSIONOU PAUSE*\n");
         if (!isLigado()) {
+            display();
         } else {
             setTocando(false);
             display();
@@ -108,8 +112,10 @@ public class CaixaDeSom implements Controlador {
     public void avancarMusica() {
         System.out.println("\n*PRESSIONOU AVANÇAR MÚSICA*\n");
         if (!isLigado()) {
+            display();
         } else {
             System.out.println(" Music >> ");
+            display();
         }
     }
 
@@ -117,8 +123,10 @@ public class CaixaDeSom implements Controlador {
     public void voltarMusica() {
         System.out.println("\n*PRESSIONOU VOLTAR MÚSICA*\n");
         if (!isLigado()) {
+            display();
         } else {
             System.out.println(" << Music ");
+            display();
         }
     }
 
